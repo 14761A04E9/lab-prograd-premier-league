@@ -106,7 +106,7 @@ function filterByAward(awardName)
    let arr=[];
    for(var i=0;i<players.length;i++)
    for(var j=0;j<players[i].awards.length;j++)
-    if((players[i].awards[j].name==awardName)&&players[i].country==country)
+    if((players[i].awards[j].name==awardName)&&(players[i].country==country))
       if(!(arr.includes(players[i])))
       arr.push(players[i]);
       return arr;
@@ -122,7 +122,7 @@ function filterByNoOfAwardsxTeamxAge(noOfAwards, team, age)
     for(var i=0;i<players.length;i++)
     {
       var count=0;
-      if((players[i].awards.length>=noOfAwards)&&(players[i].team==team)&&(players[i].age==age))
+      if((players[i].awards.length>=noOfAwards)&&(players[i].team==team)&&(players[i].age<age))
       arr.push(players[i]);
     }
     return arr;
